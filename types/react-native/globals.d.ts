@@ -199,23 +199,23 @@ declare var XMLHttpRequest: {
 };
 
 interface XMLHttpRequestEventTargetEventMap {
-    abort: ProgressEvent;
-    error: ProgressEvent;
-    load: ProgressEvent;
-    loadend: ProgressEvent;
-    loadstart: ProgressEvent;
+    abort: Event;
+    error: Event;
+    load: Event;
+    loadend: Event;
+    loadstart: Event;
     progress: ProgressEvent;
-    timeout: ProgressEvent;
+    timeout: Event;
 }
 
 interface XMLHttpRequestEventTarget {
-    onabort: ((this: XMLHttpRequest, ev: ProgressEvent) => any) | null;
-    onerror: ((this: XMLHttpRequest, ev: ProgressEvent) => any) | null;
-    onload: ((this: XMLHttpRequest, ev: ProgressEvent) => any) | null;
-    onloadend: ((this: XMLHttpRequest, ev: ProgressEvent) => any) | null;
-    onloadstart: ((this: XMLHttpRequest, ev: ProgressEvent) => any) | null;
+    onabort: ((this: XMLHttpRequest, ev: Event) => any) | null;
+    onerror: ((this: XMLHttpRequest, ev: Event) => any) | null;
+    onload: ((this: XMLHttpRequest, ev: Event) => any) | null;
+    onloadend: ((this: XMLHttpRequest, ev: Event) => any) | null;
+    onloadstart: ((this: XMLHttpRequest, ev: Event) => any) | null;
     onprogress: ((this: XMLHttpRequest, ev: ProgressEvent) => any) | null;
-    ontimeout: ((this: XMLHttpRequest, ev: ProgressEvent) => any) | null;
+    ontimeout: ((this: XMLHttpRequest, ev: Event) => any) | null;
     addEventListener<K extends keyof XMLHttpRequestEventTargetEventMap>(
         type: K,
         listener: (this: XMLHttpRequestEventTarget, ev: XMLHttpRequestEventTargetEventMap[K]) => any

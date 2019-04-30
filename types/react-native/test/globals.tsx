@@ -29,7 +29,7 @@ fetch(myRequest, myInit)
 
 const xmlRequest = new XMLHttpRequest();
 
-xmlRequest.addEventListener("load", (ev) => {
+xmlRequest.addEventListener("progress", (ev) => {
     console.log(ev.lengthComputable)
     console.log(ev.loaded)
     console.log(ev.total)
